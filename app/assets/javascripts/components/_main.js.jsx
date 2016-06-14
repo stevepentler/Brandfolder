@@ -25,7 +25,7 @@ const Main = React.createClass({
   createSurvey(survey) {
     $.ajax({
       url: '/api/v1/surveys',
-      type: 'PUT',
+      type: 'POST',
       data: { survey: survey },
       success: (response) => {
         console.log('surveys loaded', response);
