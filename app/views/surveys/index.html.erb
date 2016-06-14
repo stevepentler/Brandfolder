@@ -1,7 +1,1 @@
-<h1>steve</h1>
-<% @surveys.each do |survey| %>
-    <span><%= link_to survey.name, survey_path(survey.id) %></span>
-    <span class="btn"><% survey.active %></span>
-<% end %>
-
 <%= react_component 'Main' %>
