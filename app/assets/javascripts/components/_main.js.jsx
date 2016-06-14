@@ -22,21 +22,35 @@ const Main = React.createClass({
     })
   },
 
+  createSurvey(survey) {
+    $.ajax({
+      url: '/api/v1/surveys',
+      type: 'PUT',
+      data: { survey: survey },
+      success: (response) => {
+        console.log('surveys loaded', response);
+        this.setState({userSurveys: response})
+      }
+    }).then(this.loadSurveys);
+  },
+
   render() {
     let surveys;
     if (Object.keys(this.state.userSurveys).length != 0) {
       surveys = this.state.userSurveys.map((survey) => {
         return (
           <div key={survey.id}>
-            < Survey survey={survey} />
+            < ExistingSurveys survey={survey}
+                              createSurvey={this.createSurvey} />
           </div>
         )
       })
     }
 
     return (
-      <div key="surveys" >
+      <div key="surveys" className="container" >
         {surveys}
+        < NewSurvey createSurvey={this.createSurvey} />
       </div>
     )
   }
