@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160614160331) do
   create_table "options", force: :cascade do |t|
     t.integer "survey_id"
     t.string  "title"
-    t.integer "tally"
+    t.integer "tally",     default: 0
   end
 
   add_index "options", ["survey_id"], name: "index_options_on_survey_id", using: :btree

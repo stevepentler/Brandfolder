@@ -3,7 +3,7 @@ class CreateOptions < ActiveRecord::Migration
     create_table :options do |t|
       t.references :survey, index: true, foreign_key: true
       t.string :title
-      t.integer :tally
+      t.integer :tally, default: 0
     end
   end
 end
