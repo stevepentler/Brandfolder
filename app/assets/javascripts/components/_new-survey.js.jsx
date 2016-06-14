@@ -11,12 +11,13 @@ const NewSurvey = React.createClass({
     }
     console.log("surveyData", surveyData);
     this.props.createSurvey(surveyData);
+    this.refs.surveyForm.reset();
   },
 
   render() {
     return (
       <div>
-        <form className="center">
+        <form className="center" ref="surveyForm">
           <input type="text" ref="surveyName" placeholder="Name" required />
           <input type="text" ref="surveyQuestion" placeholder="Question" required />
           <input type="text" ref="option1" placeholder="Option 1" required />

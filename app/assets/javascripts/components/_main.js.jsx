@@ -31,7 +31,7 @@ const Main = React.createClass({
         console.log('surveys loaded', response);
         this.setState({userSurveys: response})
       }
-    }).then(this.loadSurveys);
+    }).then(this.loadSurveys());
   },
 
   render() {
