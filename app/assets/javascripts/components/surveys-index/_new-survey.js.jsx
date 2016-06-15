@@ -24,7 +24,7 @@ const NewSurvey = React.createClass({
           <input type="text" ref="option2" placeholder="Option 2" required />
           <input type="text" ref="option3" placeholder="Option 3" required />
           <input type="date" ref="surveyExpiration" placeholder="Expiration Date" />
-          <button onClick={this.handleSubmit} type="submit" className="btn center">Create Survey</button>
+          <button onClick={this.handleSubmit.bind(this)} type="submit" className="btn center">Create Survey</button>
         </form>
       </div>
     )
