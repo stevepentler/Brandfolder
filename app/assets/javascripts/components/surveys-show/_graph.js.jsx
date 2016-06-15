@@ -2,16 +2,22 @@
 
 const Graph = React.createClass({
   componentDidMount() {
+    this.listTitles();
     this.graphResults();
   },
 
+  listTitles() {
+      console.log("survey", this.props.survey)
+      console.log("options", this.props.options)
+  },
+
   graphResults() {
+    let self = this;
     var ctx = document.getElementById("resultsChart");
-    console.log(ctx)
     var resultsChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: ["A", "B", "C"],
             datasets: [{
                 label: '# of Votes',
                 data: [12, 19, 3, 5, 2, 3],
