@@ -10,18 +10,18 @@ const SurveyResults = React.createClass({
 
     return(
       <div>
-        <h3>{survey.name}</h3>
+        <h3 className="center">{survey.name}</h3>
         <a href={link}>
           <span>sharable link</span>
         </a>
         {facebookLink}
         {twitterLink}
-        < Options options={this.props.options}
-                  survey={this.props.survey}
-                  handleVote={this.props.handleVote} />
         < Graph   options={this.props.options}
                   survey={this.props.survey}
                   votes={this.props.votes} />
+        < Options options={this.props.options}
+                  survey={this.props.survey}
+                  handleVote={this.props.handleVote} />
       </div>
     )
   }

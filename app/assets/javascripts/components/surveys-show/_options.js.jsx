@@ -3,9 +3,9 @@
 const Options = React.createClass({
   listOptions(option) {
     return (
-      <div key={option.id}>
-        <button onClick={this.props.handleVote.bind(this, option, this.props.survey)} className="btn">Vote for: {option.title}</button>
-      </div>
+      <span key={option.id}>
+        <button onClick={this.props.handleVote.bind(this, option, this.props.survey)} className="btn align">Vote for: {option.title}</button>
+      </span>
     )
   },
 
@@ -20,7 +20,7 @@ const Options = React.createClass({
       options = this.props.options.map(this.listOptions);
     }
     return (
-      <div>
+      <div className="center">
         {options}
       </div>
     )
