@@ -1,9 +1,14 @@
 "use strict";
 
 const Graph = React.createClass({
-  render() {
-    var ctx = document.getElementById("myChart");
-    var myChart = new Chart(ctx, {
+  componentDidMount() {
+    this.graphResults();
+  },
+
+  graphResults() {
+    var ctx = document.getElementById("resultsChart");
+    console.log(ctx)
+    var resultsChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
@@ -29,16 +34,9 @@ const Graph = React.createClass({
                 borderWidth: 1
             }]
         },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            }
-        }
     });
+  },
+  render() {
     return (
       <div>
         <canvas id="resultsChart" width="400" height="400"></canvas>
