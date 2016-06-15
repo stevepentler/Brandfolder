@@ -11,9 +11,9 @@ const App = React.createClass({
 
   componentDidMount() {
     let self = this;
-    setInterval(function() {
+    // setInterval(function() {
       self.loadSurvey();
-    }, 1000);
+    // }, 500);
   },
 
   loadSurvey() {
@@ -33,7 +33,8 @@ const App = React.createClass({
     })
   },
 
-  handleVote(option) {
+  handleVote(option, survey) {
+    this.setStorage(survey);
     $.ajax({
       url: '/api/v1/votes',
       type: 'POST',
@@ -46,6 +47,11 @@ const App = React.createClass({
       }
     }).then(this.loadSurvey());
   },
+
+  setStorage(survey) {
+    localStorage.setItem(`pollMachine${survey.id}`, "responded");
+  },
+
 
   render() {
     return (
