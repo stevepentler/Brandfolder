@@ -5,7 +5,7 @@ const App = React.createClass({
       return {
         survey: [],
         options: [],
-        expiration: []
+        votes: []
       };
   },
 
@@ -20,7 +20,9 @@ const App = React.createClass({
       type: 'GET',
       success: (response) => {
         console.log(`survey ${surveyId} loaded`, response);
-        this.setState({survey: response})
+        this.setState({survey: response.survey,
+                       options: response.options,
+                       votes: response.votes})
       },
       error: (error) => {
         console.log(error)
