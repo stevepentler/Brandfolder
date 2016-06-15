@@ -1,7 +1,7 @@
 class SurveysController < ApplicationController
+    before_action :authorize, only: [:index]
 
   def index
-    before_action :authorize
     @surveys = current_user.surveys
   end
 

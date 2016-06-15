@@ -15,7 +15,6 @@ const Options = React.createClass({
 
   render() {
     let options = this.props.options.map(this.listOptions);
-    console.log("options", options)
     return (
       <div>
         {options}
