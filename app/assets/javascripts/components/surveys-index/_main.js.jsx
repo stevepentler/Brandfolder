@@ -28,8 +28,7 @@ const Main = React.createClass({
       type: 'POST',
       data: { survey: survey },
       success: (response) => {
-        console.log('surveys loaded', response);
-        this.setState({userSurveys: response})
+        console.log('survey created', response);
       }
     }).then(this.loadSurveys());
   },

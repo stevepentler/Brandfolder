@@ -10,7 +10,10 @@ const App = React.createClass({
   },
 
   componentDidMount() {
-    this.loadSurvey();
+    let self = this;
+    setInterval(function() {
+      self.loadSurvey();
+    }, 1000);
   },
 
   loadSurvey() {
@@ -25,15 +28,32 @@ const App = React.createClass({
                        votes: response.votes})
       },
       error: (error) => {
-        console.log(error)
+        console.log(error);
       }
     })
+  },
+
+  handleVote(option) {
+    $.ajax({
+      url: '/api/v1/votes',
+      type: 'POST',
+      data: { optionId: option.id },
+      success: (response) => {
+        console.log('vote created', response);
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    }).then(this.loadSurvey());
   },
 
   render() {
     return (
       <div className="container" >
-        <h3>{this.state.survey.name}</h3>
+        < SurveyResults survey={this.state.survey}
+                        options={this.state.options}
+                        votes={this.state.votes}
+                        handleVote={this.handleVote} />
       </div>
     )
   }
