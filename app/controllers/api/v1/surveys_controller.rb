@@ -9,7 +9,7 @@ class Api::V1::SurveysController < ApplicationController
     survey = Survey.find(params[:id])
     options = survey.options
     votes = count_votes(options)
-    data = {survey: survey, options: survey.options, votes: votes}
+    data = {survey: survey, options: options, votes: votes}
     respond_with data
   end
 

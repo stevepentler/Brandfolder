@@ -33,7 +33,9 @@ const App = React.createClass({
   render() {
     return (
       <div className="container" >
-        <h3>{this.state.survey.name}</h3>
+        < SurveyResults survey={this.state.survey}
+                        options={this.state.options}
+                        votes={this.state.votes} />
       </div>
     )
   }
