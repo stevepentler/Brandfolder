@@ -6,6 +6,7 @@ class SurveysController < ApplicationController
   end
 
   def show
+    @params = params
   end
 
 end
