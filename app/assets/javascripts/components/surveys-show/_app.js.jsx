@@ -10,7 +10,10 @@ const App = React.createClass({
   },
 
   componentDidMount() {
-    this.loadSurvey();
+    let self = this;
+    setInterval(function() {
+      self.loadSurvey();
+    }, 1000);
   },
 
   loadSurvey() {

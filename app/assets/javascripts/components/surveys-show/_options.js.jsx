@@ -1,10 +1,6 @@
 "use strict";
 
 const Options = React.createClass({
-  handleVote(option) {
-
-  },
-
   listOptions(option) {
     return (
       <div key={option.id}>
