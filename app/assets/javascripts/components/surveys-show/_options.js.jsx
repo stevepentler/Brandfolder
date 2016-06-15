@@ -8,7 +8,7 @@ const Options = React.createClass({
   listOptions(option) {
     return (
       <div key={option.id}>
-        <button onClick={this.handleVote.bind(this, option)} className="btn">Vote for: {option.title}</button>
+        <button onClick={this.props.handleVote.bind(this, option)} className="btn">Vote for: {option.title}</button>
       </div>
     )
   },

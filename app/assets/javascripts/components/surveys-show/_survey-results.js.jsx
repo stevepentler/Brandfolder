@@ -8,7 +8,8 @@ const SurveyResults = React.createClass({
       <div>
         <h3>{survey.name}</h3>
         <h3>{survey.question}</h3>
-        < Options options={this.props.options} />
+        < Options options={this.props.options}
+                  handleVote={this.props.handleVote} />
       </div>
     )
   }
