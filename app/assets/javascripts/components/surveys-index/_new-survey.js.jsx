@@ -3,26 +3,15 @@
 const NewSurvey = React.createClass({
   handleSubmit(event) {
     event.preventDefault();
-    let expiration = this.handleDate(this.refs.surveyExpiration.value);
-    console.log("expiration", expiration)
     let surveyData = {
       surveyName: this.refs.surveyName.value,
       surveyQuestion: this.refs.surveyQuestion.value,
-      surveyExpiration: expiration,
+      surveyExpiration: this.refs.surveyExpiration.value,
       surveyOptions: [this.refs.option1.value, this.refs.option2.value, this.refs.option3.value]
     }
     console.log("surveyData", surveyData);
     this.props.createSurvey(surveyData);
     this.refs.surveyForm.reset();
-  },
-
-  handleDate(dateString) {
-    console.log("datestring", dateString)
-    let date = new Date(dateString);
-    console.log("date", date)
-    let expiration = date.getTime();
-    console.log("expiration", expiration)
-    return expiration;
   },
 
   render() {

@@ -18,6 +18,18 @@ class Api::V1::SurveysController < ApplicationController
     render json: "success"
   end
 
+  def update
+    survey = Survey.find(params[:id])
+    survey.update_attributes(active: false);
+    render json: "sucess"
+  end
+
+  def destroy
+    survey = Survey.find(params[:id])
+    survey.destroy
+    render json: "success"
+  end
+
   private
 
   def count_votes(options)
