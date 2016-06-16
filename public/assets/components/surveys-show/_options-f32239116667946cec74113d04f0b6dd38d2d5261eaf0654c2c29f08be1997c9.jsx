@@ -12,7 +12,7 @@ const Options = React.createClass({
   render() {
     let surveyId = this.props.survey.id;
     let options;
-    if (!this.props.survey.active) {
+    if (this.props.survey.active === false) {
       options = <h4>This survey has closed.</h4>;
     } else if (localStorage.getItem(`pollMachine${surveyId}`) === "responded") {
       options = <h4>Thank you for your participation!</h4>

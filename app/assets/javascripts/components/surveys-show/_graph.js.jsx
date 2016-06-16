@@ -6,7 +6,7 @@ const Graph = React.createClass({
     let self = this;
     setTimeout(function() {
       self.graphResults();
-    }, 500);
+    }, 300);
   },
 
   listOptions() {

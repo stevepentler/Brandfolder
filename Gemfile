@@ -16,6 +16,7 @@ gem 'responders'
 gem 'bcrypt', '~> 3.1.7'
 gem 'react-rails'
 gem 'rails_12factor'
+gem 'figaro'
 
 group :development, :test do
   gem 'pry'

@@ -32776,9 +32776,9 @@ var App = React.createClass({
 
   componentDidMount: function () {
     var self = this;
-    // setInterval(function() {
-    self.loadSurvey();
-    // }, 500);
+    setInterval(function () {
+      self.loadSurvey();
+    }, 2000);
   },
 
   loadSurvey: function () {
@@ -32839,7 +32839,7 @@ var Graph = React.createClass({
     var self = this;
     setTimeout(function () {
       self.graphResults();
-    }, 500);
+    }, 300);
   },
 
   listOptions: function () {
@@ -32916,7 +32916,7 @@ var Options = React.createClass({
   render: function () {
     var surveyId = this.props.survey.id;
     var options = undefined;
-    if (!this.props.survey.active) {
+    if (this.props.survey.active === false) {
       options = React.createElement(
         "h4",
         null,
