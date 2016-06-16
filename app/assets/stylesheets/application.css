@@ -44,3 +44,7 @@ a {
 .btn {
   background-color: #384650;
 }
+
+.btn:hover, .btn-large:hover {
+  background-color: #2BA2D6;
+}
