@@ -1,15 +1,15 @@
 class Api::V1::SurveysController < ApplicationController
   respond_to :json
+  before_action :set_survey, only: [:show, :update, :destroy]
 
   def index
     respond_with current_user.surveys.order(active: :desc)
   end
 
   def show
-    survey = Survey.find(params[:id])
-    options = survey.options
+    options = @survey.options
     votes = count_votes(options)
-    data = {survey: survey, options: options, votes: votes}
+    data = {survey: @survey, options: options, votes: votes}
     respond_with data
   end
 
@@ -19,14 +19,12 @@ class Api::V1::SurveysController < ApplicationController
   end
 
   def update
-    survey = Survey.find(params[:id])
-    survey.update_attributes(active: false);
+    @survey.update_attributes(active: false);
     render json: "sucess"
   end
 
   def destroy
-    survey = Survey.find(params[:id])
-    survey.destroy
+    @survey.destroy
     render json: "success"
   end
 
@@ -38,8 +36,8 @@ class Api::V1::SurveysController < ApplicationController
     end
   end
 
-  # def survey_params
-  #   params.require(:survey).permit(:surveyName, :surveyQuestion, :surveyExpiration, :surveyOptions)
-  # end
+  def set_survey
+    @survey = Survey.find(params[:id])
+  end
 
 end
