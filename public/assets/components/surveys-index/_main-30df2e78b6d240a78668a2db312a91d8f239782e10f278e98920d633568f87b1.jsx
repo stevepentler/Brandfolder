@@ -2,9 +2,9 @@
 
 const Main = React.createClass({
   getInitialState() {
-      return {
-        userSurveys: {},
-      };
+    return {
+      userSurveys: {},
+    };
   },
 
   componentDidMount() {
@@ -16,7 +16,6 @@ const Main = React.createClass({
       url: '/api/v1/surveys',
       type: 'GET',
       success: (response) => {
-        console.log('surveys loaded', response);
         this.setState({userSurveys: response})
       }
     })

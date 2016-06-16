@@ -32578,8 +32578,6 @@ var ExistingSurveys = React.createClass({
     var expirationDate = new Date(this.props.survey.expiration);
     var expirationEpoch = expirationDate.getTime();
     var currentEpoch = Date.now();
-    console.log("expirationEpoch", expirationEpoch);
-    console.log("currentEpoch", currentEpoch);
     if (expirationEpoch < currentEpoch) {
       this.props.updateSurvey(this.props.survey);
     }
@@ -32635,7 +32633,6 @@ var Main = React.createClass({
       url: '/api/v1/surveys',
       type: 'GET',
       success: function (response) {
-        console.log('surveys loaded', response);
         _this.setState({ userSurveys: response });
       }
     });
@@ -32847,7 +32844,6 @@ var Graph = React.createClass({
     this.props.options.forEach(function (option) {
       optionsArray.push(option.title);
     });
-    console.log("optionsArray", optionsArray);
     return optionsArray;
   },
 
@@ -32857,7 +32853,6 @@ var Graph = React.createClass({
     this.props.votes.forEach(function (vote, index) {
       votesArray.push(self.props.votes[index]);
     });
-    console.log("votesArray", votesArray);
     return votesArray;
   },
 

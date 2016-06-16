@@ -12,7 +12,6 @@ const Graph = React.createClass({
   listOptions() {
     let optionsArray = [];
     this.props.options.forEach(function(option){ optionsArray.push(option.title)})
-    console.log("optionsArray", optionsArray)
     return optionsArray;
   },
 
@@ -20,7 +19,6 @@ const Graph = React.createClass({
     self = this;
     let votesArray = []
     this.props.votes.forEach(function(vote, index){ votesArray.push(self.props.votes[index])})
-    console.log("votesArray", votesArray)
     return votesArray;
   },
 

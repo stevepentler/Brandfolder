@@ -2,11 +2,11 @@
 
 const App = React.createClass({
   getInitialState() {
-      return {
-        survey: [],
-        options: [],
-        votes: []
-      };
+    return {
+      survey: [],
+      options: [],
+      votes: []
+    };
   },
 
   componentDidMount() {
