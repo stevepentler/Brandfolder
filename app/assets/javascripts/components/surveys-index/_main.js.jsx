@@ -80,8 +80,8 @@ const Main = React.createClass({
     }
 
     return (
-      <div key="surveys" className="container" >
-        <h3>Existing Surveys</h3>
+      <div key="surveys" className="container center" >
+        <h3 className="kraken-color">Existing Surveys</h3>
         {surveys}
         < NewSurvey createSurvey={this.createSurvey} />
       </div>

@@ -19,15 +19,15 @@ const ExistingSurveys = React.createClass({
 
   render() {
     let survey = this.props.survey;
-    let path = `surveys/${survey.id}`;
-    let status = survey.active ? "Active" : "Inactive";
+    let path = `/surveys/${survey.id}`;
+    let status = survey.active ? "active" : "inactive";
     console.log("survey", survey)
     return(
       <div>
         <a href={path}>
-          <span>{survey.name} - {status} </span>
+          <span className="existing-title">{survey.name} - {status} </span>
         </a>
-        <button onClick={this.props.deleteSurvey.bind(this, survey)} className="btn">Delete Survey</button>
+        <i className="material-icons small" onClick={this.props.deleteSurvey.bind(this, survey)}>delete</i>
       </div>
     )
   }

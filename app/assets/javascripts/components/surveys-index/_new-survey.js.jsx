@@ -16,14 +16,18 @@ const NewSurvey = React.createClass({
 
   render() {
     return (
-      <div>
+      <div className="row card custom-padding">
         <form className="center" ref="surveyForm">
-          <input type="text" ref="surveyName" placeholder="Name" required />
-          <input type="text" ref="surveyQuestion" placeholder="Question" required />
-          <input type="text" ref="option1" placeholder="Option 1" required />
-          <input type="text" ref="option2" placeholder="Option 2" required />
-          <input type="text" ref="option3" placeholder="Option 3" required />
-          <input type="date" ref="surveyExpiration" placeholder="Expiration Date" />
+          <div className="col s6">
+            <input type="text" ref="surveyName" placeholder="Name" required />
+            <input type="text" ref="surveyQuestion" placeholder="Question" required />
+            <input type="date" ref="surveyExpiration" placeholder="Expiration Date" />
+          </div>
+          <div className="col s6">
+            <input type="text" ref="option1" placeholder="Option 1" required />
+            <input type="text" ref="option2" placeholder="Option 2" required />
+            <input type="text" ref="option3" placeholder="Option 3" required />
+          </div>
           <button onClick={this.handleSubmit.bind(this)} type="submit" className="btn center">Create Survey</button>
         </form>
       </div>

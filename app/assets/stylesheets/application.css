@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+body {
+  font-color: #dde2e6;
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  color: #2BA2D6;
+}
+
+.kraken-color {
+  color: #252c2f;
+}
+.existing-title {
+  font-size: 2.25em;
+}
+
+.align {
+  width: calc(33.333%);
+}
+
+.custom-padding {
+  padding:10px;
+}
+
+.captain-background {
+  background-color: #384650;
+}
+
+.btn {
+  background-color: #384650;
+}

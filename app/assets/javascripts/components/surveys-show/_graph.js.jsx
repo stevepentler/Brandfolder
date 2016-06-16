@@ -1,14 +1,27 @@
 "use strict";
 
 const Graph = React.createClass({
-  componentDidMount() {
-    this.listTitles();
-    this.graphResults();
+
+  componentWillUpdate() {
+    let self = this;
+    setTimeout(function() {
+      self.graphResults();
+    }, 500);
   },
 
-  listTitles() {
-      console.log("survey", this.props.survey)
-      console.log("options", this.props.options)
+  listOptions() {
+    let optionsArray = [];
+    this.props.options.forEach(function(option){ optionsArray.push(option.title)})
+    console.log("optionsArray", optionsArray)
+    return optionsArray;
+  },
+
+  listVotes() {
+    self = this;
+    let votesArray = []
+    this.props.votes.forEach(function(vote, index){ votesArray.push(self.props.votes[index])})
+    console.log("votesArray", votesArray)
+    return votesArray;
   },
 
   graphResults() {
@@ -17,10 +30,10 @@ const Graph = React.createClass({
     var resultsChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["A", "B", "C"],
+            labels: this.listOptions(),
             datasets: [{
                 label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                data: this.listVotes(),
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -40,12 +53,21 @@ const Graph = React.createClass({
                 borderWidth: 1
             }]
         },
+        options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+      }
     });
   },
   render() {
     return (
       <div>
-        <canvas id="resultsChart" width="400" height="400"></canvas>
+        <canvas id="resultsChart" width="400" height="150"></canvas>
       </div>
     )
   }
