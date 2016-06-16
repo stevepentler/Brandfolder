@@ -1,0 +1,52 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+body {
+  font-color: #dde2e6;
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  color: #2BA2D6;
+}
+
+.kraken-color {
+  color: #252c2f;
+}
+.existing-title {
+  font-size: 2.25em;
+}
+
+.align {
+  width: calc(33.333%);
+}
+
+.custom-padding {
+  padding:10px;
+}
+
+.captain-background {
+  background-color: #384650;
+}
+
+.btn {
+  background-color: #384650;
+}
+
+.btn:hover, .btn-large:hover {
+  background-color: #2BA2D6;
+}
+
