@@ -11,12 +11,19 @@ const SurveyResults = React.createClass({
 
     return(
       <div>
-        <h3 className="center">{survey.name}</h3>
-        <a href={link}>
-          <span>sharable link</span>
-        </a>
-        <p>{facebookLink}</p>
-        <p>{twitterLink}</p>
+        <div className="row">
+          <div className="col s6">
+            <h2 className="right survey-header">{survey.name}</h2>
+          </div>
+          <div className="col s6">
+            <p>{facebookLink}</p>
+            <p>{twitterLink}</p>
+            <a href={link}>
+              <span>sharable link</span>
+            </a>
+          </div>
+        </div>
+        <h4 className="center">{survey.question}</h4>
         < Graph   options={this.props.options}
                   survey={this.props.survey}
                   votes={this.props.votes} />
