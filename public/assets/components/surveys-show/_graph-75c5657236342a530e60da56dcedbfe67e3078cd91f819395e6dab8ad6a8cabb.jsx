@@ -3,10 +3,7 @@
 const Graph = React.createClass({
 
   componentWillUpdate() {
-    let self = this;
-    setTimeout(function() {
-      self.graphResults();
-    }, 300);
+    this.graphResults();
   },
 
   listOptions() {

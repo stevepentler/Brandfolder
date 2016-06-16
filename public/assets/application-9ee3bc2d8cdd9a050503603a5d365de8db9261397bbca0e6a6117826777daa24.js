@@ -32833,10 +32833,7 @@ var Graph = React.createClass({
   displayName: "Graph",
 
   componentWillUpdate: function () {
-    var self = this;
-    setTimeout(function () {
-      self.graphResults();
-    }, 300);
+    this.graphResults();
   },
 
   listOptions: function () {
