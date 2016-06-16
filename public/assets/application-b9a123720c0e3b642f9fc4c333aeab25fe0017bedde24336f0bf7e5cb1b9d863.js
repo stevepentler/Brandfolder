@@ -32880,6 +32880,7 @@ var Graph = React.createClass({
     });
   },
   render: function () {
+    console.log("votes", this.props.votes);
     return React.createElement(
       "div",
       null,

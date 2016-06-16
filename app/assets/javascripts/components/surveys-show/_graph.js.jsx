@@ -60,6 +60,7 @@ const Graph = React.createClass({
     });
   },
   render() {
+    console.log("votes", this.props.votes)
     return (
       <div>
         <canvas id="resultsChart" width="400" height="150"></canvas>
