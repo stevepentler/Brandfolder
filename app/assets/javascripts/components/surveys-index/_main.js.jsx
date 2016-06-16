@@ -81,7 +81,7 @@ const Main = React.createClass({
 
     return (
       <div key="surveys" className="container center" >
-        <h3 >Existing Surveys</h3>
+        <h3 className="kraken-color">Existing Surveys</h3>
         {surveys}
         < NewSurvey createSurvey={this.createSurvey} />
       </div>
