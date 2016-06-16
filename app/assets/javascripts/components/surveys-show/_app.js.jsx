@@ -13,7 +13,7 @@ const App = React.createClass({
     let self = this;
     setInterval(function() {
       self.loadSurvey();
-    }, 2000);
+    }, 3000);
   },
 
   loadSurvey() {
