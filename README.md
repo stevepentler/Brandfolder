@@ -1,6 +1,6 @@
 ## POLL MACHINE
 
-[LIVE ON HEROKU](https://poll-machine.herokuapp.com/) || [GITHUB](https://github.com/stevepentler/Brandfolder) 
+[LIVE ON HEROKU](https://poll-machine.herokuapp.com/) || [GITHUB](https://github.com/stevepentler/Poll-Machine) 
 
 #### A personal effort from: 
 [Steve Pentler](https://github.com/stevepentler) 
@@ -47,7 +47,7 @@ A fun way to create/manage polls, share them with friends on social media, and w
 If you wish to download the project and set it up locally, run the following commands:
 
 ```
-$ git clone https://github.com/stevepentler/Brandfolder.git
+$ git clone https://github.com/stevepentler/Poll-Machine.git
 ```
 ```
 $ bundle
