@@ -20,7 +20,7 @@ class Api::V1::SurveysController < ApplicationController
 
   def update
     @survey.update_attributes(active: false);
-    render json: "sucess"
+    render json: "success"
   end
 
   def destroy
