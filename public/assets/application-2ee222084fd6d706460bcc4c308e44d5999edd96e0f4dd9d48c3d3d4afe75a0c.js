@@ -32778,7 +32778,7 @@ var App = React.createClass({
     var self = this;
     setInterval(function () {
       self.loadSurvey();
-    }, 2000);
+    }, 3000);
   },
 
   loadSurvey: function () {
@@ -32946,7 +32946,10 @@ var SurveyResults = React.createClass({
   render: function () {
     var survey = this.props.survey;
     var votes = this.props.votes;
-    var link = "https://poll-machine.herokuapp.com/surveys/" + survey.id;
+    var link = undefined;
+    if (survey.id) {
+      link = "https://poll-machine.herokuapp.com/surveys/" + survey.id;
+    }
     var facebookHref = "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpoll-machine.herokuapp.com%2Fsurveys%2F" + survey.id + "&amp;src=sdkpreparse";
     var facebookLink = React.createElement(
       "div",
